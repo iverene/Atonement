@@ -7,12 +7,11 @@ const DESCRIPTIONS = {
 };
 
 const EndingSelection = ({ choices, onChoose }) => {
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(15);
 
   useEffect(() => {
-    // Timer logic
     if (timeLeft === 0) {
-      onChoose('A'); // Automatically choose Ending A (Ending 1)
+      onChoose('A'); 
       return;
     }
 
@@ -20,7 +19,6 @@ const EndingSelection = ({ choices, onChoose }) => {
       setTimeLeft((prevTime) => prevTime - 1);
     }, 1000);
 
-    // Cleanup interval on unmount or when timer stops
     return () => clearInterval(timerId);
   }, [timeLeft, onChoose]);
 
@@ -29,7 +27,7 @@ const EndingSelection = ({ choices, onChoose }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/90 z-50 flex flex-col items-center justify-center space-y-12 p-6"
+      className="fixed inset-0 bg-black/90 z-50 flex flex-col items-center justify-center space-y-8 md:space-y-12 p-4 md:p-6"
     >
       <motion.div
         initial={{ y: -50, opacity: 0 }}
@@ -37,17 +35,17 @@ const EndingSelection = ({ choices, onChoose }) => {
         transition={{ delay: 0.2, duration: 0.5 }}
         className="text-center space-y-4"
       >
-        <h2 className="text-white text-5xl md:text-7xl font-black uppercase tracking-tighter drop-shadow-red-glow">
+        <h2 className="text-white text-4xl md:text-7xl font-black uppercase tracking-tighter drop-shadow-red-glow">
           Decide Their Fate
         </h2>
         
         {/* Suspense Timer Display */}
-        <div className="text-red-600 text-4xl font-mono font-bold tracking-widest animate-pulse">
+        <div className="text-red-600 text-3xl md:text-4xl font-mono font-bold tracking-widest animate-pulse">
           00:{timeLeft < 10 ? `0${timeLeft}` : timeLeft}
         </div>
       </motion.div>
 
-      <div className="flex flex-col md:flex-row gap-6 w-full max-w-4xl">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full max-w-4xl px-4">
         {Object.entries(choices).map(([key, { label }], index) => (
           <motion.button
             key={key}
@@ -57,12 +55,12 @@ const EndingSelection = ({ choices, onChoose }) => {
             whileHover={{ scale: 1.05, borderColor: "rgba(220, 38, 38, 0.8)" }}
             whileTap={{ scale: 0.95 }}
             onClick={() => onChoose(key)}
-            className="flex-1 bg-[#181818] border border-gray-700 p-8 rounded-lg flex flex-col items-center text-center hover:bg-[#222] transition-all duration-300 group"
+            className="flex-1 bg-[#181818] border border-gray-700 p-6 md:p-8 rounded-lg flex flex-col items-center text-center hover:bg-[#222] transition-all duration-300 group"
           >
-            <span className="text-3xl font-bold text-white mb-4 group-hover:text-red-600 transition-colors">
+            <span className="text-2xl md:text-3xl font-bold text-white mb-2 md:mb-4 group-hover:text-red-600 transition-colors">
               {label}
             </span>
-            <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-xs mx-auto group-hover:text-gray-200">
+            <p className="text-gray-400 text-xs md:text-base leading-relaxed max-w-xs mx-auto group-hover:text-gray-200">
               {DESCRIPTIONS[key]}
             </p>
           </motion.button>

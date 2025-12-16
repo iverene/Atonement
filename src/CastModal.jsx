@@ -18,8 +18,8 @@ const CAST_DATA = {
   crew: [
     { role: "Director", name: "Charlie Villacoba" },
     { role: "Co-Director", name: "Iverene Grace Causapin" },
-    { role: "Editor", name: "Charlie Villacoba, Nicoll Mitch Maningat" },
-    { role: "Videographer", name: "Charlie Villacoba, John Rey Bagunas" },
+    { role: "Editors", name: "Charlie Villacoba, Nicoll Mitch Maningat, John Rey Bagunas" },
+    { role: "Videographers", name: "Charlie Villacoba, John Rey Bagunas" },
     { role: "Scriptwriter", name: "Cielo Tadas" },
   ]
 };
@@ -28,7 +28,7 @@ const CastModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[70] flex justify-center items-center bg-black/80 p-4">
+    <div className="fixed inset-0 z-[70] flex justify-center items-center bg-black/80 p-4 backdrop-blur-sm">
       <style>{`
         .no-scrollbar::-webkit-scrollbar {
           display: none;
@@ -48,27 +48,27 @@ const CastModal = ({ isOpen, onClose }) => {
         style={{ maxHeight: '85vh' }}
       >
         {/* Header */}
-        <div className="sticky top-0 z-20 bg-[#181818] px-8 py-6 border-b border-gray-700 flex justify-between items-center shadow-md">
-          <h2 className="text-2xl font-bold text-white">Cast & Crew</h2>
+        <div className="sticky top-0 z-20 bg-[#181818] px-6 py-4 md:px-8 md:py-6 border-b border-gray-700 flex justify-between items-center shadow-md">
+          <h2 className="text-xl md:text-2xl font-bold text-white">Cast & Crew</h2>
           <button 
             onClick={onClose}
             className="bg-gray-800 rounded-full p-2 hover:bg-gray-600 transition-colors"
           >
-            <FaTimes className="w-5 h-5 text-white" />
+            <FaTimes className="w-4 h-4 md:w-5 md:h-5 text-white" />
           </button>
         </div>
 
         {/* Scrollable Content */}
-        <div className="p-8 overflow-y-auto no-scrollbar space-y-10">
+        <div className="p-6 md:p-8 overflow-y-auto no-scrollbar space-y-8 md:space-y-10">
           
           {/* Section: Main Cast */}
           <div>
-            <h3 className="text-xl font-semibold text-gray-400 mb-4 border-l-4 border-red-600 pl-3">Main Cast</h3>
+            <h3 className="text-lg md:text-xl font-semibold text-gray-400 mb-4 border-l-4 border-red-600 pl-3">Main Cast</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {CAST_DATA.main.map((item, index) => (
                 <div key={index} className="flex justify-between items-center bg-[#2b2b2b] p-3 rounded-md border border-gray-700">
-                  <span className="font-bold text-white">{item.actor}</span>
-                  <span className="text-gray-400 text-sm">as <span className="text-gray-200">{item.character}</span></span>
+                  <span className="font-bold text-white text-sm md:text-base">{item.actor}</span>
+                  <span className="text-gray-400 text-xs md:text-sm">as <span className="text-gray-200">{item.character}</span></span>
                 </div>
               ))}
             </div>
@@ -76,12 +76,12 @@ const CastModal = ({ isOpen, onClose }) => {
 
           {/* Section: Supporting Characters */}
           <div>
-            <h3 className="text-xl font-semibold text-gray-400 mb-4 border-l-4 border-red-600 pl-3">Supporting Characters</h3>
+            <h3 className="text-lg md:text-xl font-semibold text-gray-400 mb-4 border-l-4 border-red-600 pl-3">Supporting Characters</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {CAST_DATA.supporting.map((item, index) => (
                 <div key={index} className="flex justify-between items-center bg-[#2b2b2b] p-3 rounded-md border border-gray-700">
-                  <span className="font-bold text-white">{item.actor}</span>
-                  <span className="text-gray-400 text-sm">as <span className="text-gray-200">{item.character}</span></span>
+                  <span className="font-bold text-white text-sm md:text-base">{item.actor}</span>
+                  <span className="text-gray-400 text-xs md:text-sm">as <span className="text-gray-200">{item.character}</span></span>
                 </div>
               ))}
             </div>
@@ -89,12 +89,12 @@ const CastModal = ({ isOpen, onClose }) => {
 
           {/* Section: Crew */}
           <div>
-            <h3 className="text-xl font-semibold text-gray-400 mb-4 border-l-4 border-red-600 pl-3">Crew</h3>
+            <h3 className="text-lg md:text-xl font-semibold text-gray-400 mb-4 border-l-4 border-red-600 pl-3">Crew</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {CAST_DATA.crew.map((item, index) => (
                 <div key={index} className="flex flex-col bg-[#202020] p-3 rounded-md border border-gray-800">
-                  <span className="text-gray-500 text-xs uppercase tracking-widest mb-1">{item.role}</span>
-                  <span className="font-medium text-white">{item.name}</span>
+                  <span className="text-gray-500 text-[10px] md:text-xs uppercase tracking-widest mb-1">{item.role}</span>
+                  <span className="font-medium text-white text-sm md:text-base">{item.name}</span>
                 </div>
               ))}
             </div>
