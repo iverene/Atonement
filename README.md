@@ -46,7 +46,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/BagunasJohnrey/atonement.git](https://github.com/BagunasJohnrey/atonement.git)
+    git clone https://github.com/BagunasJohnrey/atonement.git
     cd atonement
     ```
 
