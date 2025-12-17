@@ -23,7 +23,7 @@ const CAST_DATA = {
     { role: "Editor", name: "Charlie Villacobaa" },
     { role: "VFX Artist", name: "Nicoll Mitch Maningat" },
     { role: "Graphic Designer", name: "John Rey Bagunas" },
-    { role: "Set Decorator", name: "Raniel Carl Lopez" },
+    { role: "Set Decorator", name: "Raniel Carl Lopez, Ramon Pascual" },
     { role: "Developers", name: "Iverene Grace Causapin, John Rey Bagunas" },
 
   ]
