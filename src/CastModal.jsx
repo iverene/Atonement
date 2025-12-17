@@ -21,7 +21,7 @@ const CAST_DATA = {
     { role: "Scriptwriter", name: "Cielo Tadas" },
     { role: "Videographers", name: "Charlie Villacoba, John Rey Bagunas" },
     { role: "Editor", name: "Charlie Villacobaa" },
-    { role: "Animator", name: "Nicoll Mitch Maningat" },
+    { role: "VFX Artist", name: "Nicoll Mitch Maningat" },
     { role: "Graphic Designer", name: "John Rey Bagunas" },
     { role: "Developers", name: "Iverene Grace Causapin, John Rey Bagunas" },
   ]
