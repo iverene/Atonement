@@ -14,7 +14,7 @@ const FILM_DATA = {
   },
   endings: {
     A: {
-      id: 'D8VEhcPeSlc',
+      id: 'wxWLQTaG9c0',
       label: "Ending 1",
     },
     B: {
